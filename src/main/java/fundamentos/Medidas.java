@@ -3,11 +3,11 @@ package fundamentos;
 
 // 2- Bibliotecas
 import java.util.Scanner;
+import java.lang.Math;
 
 // 3- Classe
 public class Medidas {
     //3.1- Atributos
-    static int lado;
     static Scanner entrada = new Scanner(System.in); // Instanciar o obj de leitura do console
     static int base;
     static int altura;
@@ -15,7 +15,7 @@ public class Medidas {
     //3.2- Métodos e Funções
     public static void main(String[] args){
         String opcao;
-        int area = 0; // Recebe os cálculos das áreas
+        double area = 0; // Recebe os cálculos das áreas
 
         System.out.println("Escolha o cálculo desejado: ");
         System.out.println("(1) Área do quadrado");
@@ -33,11 +33,11 @@ public class Medidas {
                 area = calcularAreaDoRetangulo();
                 break;
             case "3":
-                area = calcularAreaDoTriângulo();
+                area = calcularAreaDoTriangulo();
                 break;
-//            case "4":
-//                area = (int) calcularAreaDoCirculo();
-//                break;
+            case "4":
+                area = calcularAreaDoCirculo();
+                break;
             default:
                 System.out.println("Opção inválida: " + opcao);
         }
@@ -49,7 +49,7 @@ public class Medidas {
 
     public static int calcularAreaDoQuadrado(){
         System.out.println("Digite o tamanho do lado: ");
-        lado = entrada.nextInt(); // Leitura do tamanho do lado
+        int lado = entrada.nextInt(); // Leitura do tamanho do lado
         return lado * lado; // Retorna a área do quadrado;
     }
 
@@ -61,7 +61,7 @@ public class Medidas {
         return base * altura;
     }
 
-    public static int calcularAreaDoTriângulo(){
+    public static int calcularAreaDoTriangulo(){
         System.out.println("Digite o tamanho da base: ");
         base = entrada.nextInt();
         System.out.println("Digite o tamanho da altura: ");
@@ -69,13 +69,9 @@ public class Medidas {
         return base * altura / 2;
     }
 
-//    public static float calcularAreaDoCirculo(){ // RESOLVER
-//        int perimetro;
-//        float raio, r;
-//
-//        System.out.println("Digite o tamanho do perímetro do círculo: ");
-//        perimetro = (int) entrada.nextFloat();
-//        raio = (float) perimetro / 2;
-//        r = 3,14 * raio ^ 2;
-//    }
+    public static double calcularAreaDoCirculo(){
+        System.out.println("Digite o tamanho do perímetro do círculo: ");
+        double diametro = entrada.nextFloat();
+        return 3.1416 * Math.pow((diametro/2), 2);
+    }
 }
