@@ -7,12 +7,12 @@ import java.lang.Math;
 
 // 3- Classe
 public class Medidas {
-    //3.1- Atributos
+    // 3.1- Atributos
     static Scanner entrada = new Scanner(System.in); // Instanciar o obj de leitura do console
     static int base;
     static int altura;
 
-    //3.2- Métodos e Funções
+    // 3.2- Métodos e Funções
     public static void main(String[] args){
         String opcao;
         double area = 0; // Recebe os cálculos das áreas
@@ -22,6 +22,7 @@ public class Medidas {
         System.out.println("(2) Área do retângulo");
         System.out.println("(3) Área do triângulo");
         System.out.println("(4) Área do círculo");
+        System.out.println("(5) Tabuada");
 
         opcao = entrada.nextLine(); // Leitura da opção
 
@@ -38,6 +39,9 @@ public class Medidas {
             case "4":
                 area = calcularAreaDoCirculo();
                 break;
+            case "5":
+                tabuada();
+                break;
             default:
                 System.out.println("Opção inválida: " + opcao);
         }
@@ -50,6 +54,15 @@ public class Medidas {
     public static int calcularAreaDoQuadrado(){
         System.out.println("Digite o tamanho do lado: ");
         int lado = entrada.nextInt(); // Leitura do tamanho do lado
+
+        // Desenhar o quadrado
+        for(int linha = 1; linha <= lado; linha+=2) {
+            for (int coluna = 1; coluna <= lado; coluna++) {
+                System.out.print("#");
+            }
+            System.out.println(" ");
+        }
+        System.out.println(" "); // Pular de linha
         return lado * lado; // Retorna a área do quadrado;
     }
 
@@ -73,5 +86,14 @@ public class Medidas {
         System.out.println("Digite o tamanho do perímetro do círculo: ");
         double diametro = entrada.nextFloat();
         return 3.1416 * Math.pow((diametro/2), 2);
+    }
+
+    public static void tabuada(){
+        System.out.println("Você calcular a tabuada de qual número? ");
+        byte numero = entrada.nextByte();
+
+        for(byte i = 1; i <= 10; i++){
+            System.out.println(numero * i);
+        }
     }
 }
