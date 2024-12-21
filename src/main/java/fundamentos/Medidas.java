@@ -23,7 +23,6 @@ public class Medidas {
         System.out.println("(3) Área do triângulo");
         System.out.println("(4) Área do círculo");
         System.out.println("(5) Tabuada");
-
         opcao = entrada.nextLine(); // Leitura da opção
 
         switch (opcao){
