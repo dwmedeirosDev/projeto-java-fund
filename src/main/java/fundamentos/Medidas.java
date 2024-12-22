@@ -2,6 +2,7 @@
 package fundamentos;
 
 // 2- Bibliotecas
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -23,6 +24,7 @@ public class Medidas {
         System.out.println("(3) Área do triângulo");
         System.out.println("(4) Área do círculo");
         System.out.println("(5) Tabuada");
+        System.out.println("(6) Fibonacci");
         opcao = entrada.nextLine(); // Leitura da opção
 
         switch (opcao){
@@ -40,6 +42,9 @@ public class Medidas {
                 break;
             case "5":
                 tabuada();
+                break;
+            case "6":
+                fibonacci();
                 break;
             default:
                 System.out.println("Opção inválida: " + opcao);
@@ -94,5 +99,30 @@ public class Medidas {
         for(byte i = 1; i <= 10; i++){
             System.out.println(numero * i);
         }
+    }
+
+    public static void fibonacci(){
+        System.out.println("Quantos deseja calcular na sequência? ");
+        byte numero = entrada.nextByte();
+
+        switch (numero){
+            case 0:
+                System.out.println("A sequência está vazia");
+                break;
+            case 1:
+                System.out.println("Seguência de Fibonacci: 1");
+                break;
+            default:
+                int num1 = 0;
+                int num2 = 1;
+
+                for(byte i = 2; i <= numero; i++){
+                    int fib = num1 + num2;
+                    System.out.print(fib + " ");
+                    num1 = num2;
+                    num2 = fib;
+                }
+        }
+
     }
 }
