@@ -2,7 +2,6 @@
 package fundamentos;
 
 // 2- Bibliotecas
-
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -18,7 +17,7 @@ public class Medidas {
     public static void main(String[] args){
         String opcao;
 
-        while(true) {
+        // while(true) {
             System.out.println("Escolha o cálculo desejado: ");
             System.out.println("(1) Área do quadrado");
             System.out.println("(2) Área do retângulo");
@@ -69,7 +68,7 @@ public class Medidas {
             if (area > 0) {
                 System.out.println("A área é de " + area + "m²");
             }
-        }
+        // }
     }
 
     public static int calcularAreaDoQuadrado(){
@@ -154,9 +153,17 @@ public class Medidas {
     }
 
     public static void divisãoPorZero(){
+        // Tratamento de erro
+        try {
         System.out.print("Qual é o dividendo? ");
-        int dividendo = entrada.nextInt();
+        byte dividendo = entrada.nextByte();
         System.out.print("Qual é o divisor? ");
-        int divisor = entrada.nextInt();
+        byte divisor = entrada.nextByte();
+        // System.out.println("Resultado é: " + dividendo / divisor);
+        System.out.println("Resultado é: " + dividendo / divisor);
+        }
+        catch(Exception e){
+            System.out.println("Mensagem temporária em INGLÊS do erro - " + e.getMessage());
+        }
     }
 }
