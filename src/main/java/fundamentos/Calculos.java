@@ -20,7 +20,5 @@ public class Calculos {
             default:
                 System.out.println("Você digitou um número diferente");
         }
-
-
     }
 }
