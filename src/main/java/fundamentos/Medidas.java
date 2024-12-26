@@ -14,7 +14,7 @@ public class Medidas {
     static double area = 0; // Recebe os cálculos das áreas
 
     // 3.2- Métodos e Funções
-    public static void main(String[] args){
+public static void main(String[] args){
         String opcao;
 
         // while(true) {
