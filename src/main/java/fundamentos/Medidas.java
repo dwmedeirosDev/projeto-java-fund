@@ -2,7 +2,7 @@
 package fundamentos;
 
 // 2- Bibliotecas
-import java.sql.SQLOutput;
+
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -12,46 +12,59 @@ public class Medidas {
     static Scanner entrada = new Scanner(System.in); // Instanciar o obj de leitura do console
     static int base;
     static int altura;
+    static double area = 0; // Recebe os cálculos das áreas
 
     // 3.2- Métodos e Funções
     public static void main(String[] args){
         String opcao;
-        double area = 0; // Recebe os cálculos das áreas
 
-        System.out.println("Escolha o cálculo desejado: ");
-        System.out.println("(1) Área do quadrado");
-        System.out.println("(2) Área do retângulo");
-        System.out.println("(3) Área do triângulo");
-        System.out.println("(4) Área do círculo");
-        System.out.println("(5) Tabuada");
-        System.out.println("(6) Fibonacci");
-        opcao = entrada.nextLine(); // Leitura da opção
+        while(true) {
+            System.out.println("Escolha o cálculo desejado: ");
+            System.out.println("(1) Área do quadrado");
+            System.out.println("(2) Área do retângulo");
+            System.out.println("(3) Área do triângulo");
+            System.out.println("(4) Área do círculo");
+            System.out.println("(5) Tabuada");
+            System.out.println("(6) Fibonacci");
+            System.out.println("(7) Contagem regressiva");
+            System.out.println("(S) Sair");
 
-        switch (opcao){
-            case "1":
-               area = calcularAreaDoQuadrado();
-               break;
-            case "2":
-                area = calcularAreaDoRetangulo();
-                break;
-            case "3":
-                area = calcularAreaDoTriangulo();
-                break;
-            case "4":
-                area = calcularAreaDoCirculo();
-                break;
-            case "5":
-                tabuada();
-                break;
-            case "6":
-                fibonacci();
-                break;
-            default:
-                System.out.println("Opção inválida: " + opcao);
-        }
+            opcao = entrada.nextLine(); // Leitura da opção
 
-        if(area > 0) {
-            System.out.println("A área é de " + area + "m²");
+            switch (opcao) {
+                case "1":
+                    area = calcularAreaDoQuadrado();
+                    break; // Para o while
+                case "2":
+                    area = calcularAreaDoRetangulo();
+                    break;
+                case "3":
+                    area = calcularAreaDoTriangulo();
+                    break;
+                case "4":
+                    area = calcularAreaDoCirculo();
+                    break;
+                case "5":
+                    tabuada();
+                    break;
+                case "6":
+                    fibonacci();
+                    break;
+                case "7":
+                    regressiva();
+                    break;
+                case "S":
+                case "s":
+                    System.out.println("Agradecemos pela preferência");
+                    break;
+                default:
+                    System.out.println("Opção inválida: " + opcao);
+                    break;
+            }
+
+            if (area > 0) {
+                System.out.println("A área é de " + area + "m²");
+            }
         }
     }
 
@@ -93,7 +106,7 @@ public class Medidas {
     }
 
     public static void tabuada(){
-        System.out.println("Você calcular a tabuada de qual número? ");
+        System.out.println("Você quer calcular a tabuada de qual número? ");
         byte numero = entrada.nextByte();
 
         for(byte i = 1; i <= 10; i++){
@@ -105,7 +118,7 @@ public class Medidas {
         System.out.println("Quantos deseja calcular na sequência? ");
         byte numero = entrada.nextByte();
 
-        switch (numero){
+        switch (numero) {
             case 0:
                 System.out.println("A sequência está vazia");
                 break;
@@ -116,13 +129,23 @@ public class Medidas {
                 int num1 = 0;
                 int num2 = 1;
 
-                for(byte i = 2; i <= numero; i++){
-                    int fib = num1 + num2;
-                    System.out.print(fib + " ");
-                    num1 = num2;
-                    num2 = fib;
+                for (int i = 1; i <= numero; i++) {
+                    System.out.println("A sequência é: " + num1);
+                    num1 = num1 + num2;
+                    num2 = num1 - num2;
                 }
         }
+    }
 
+    public static void regressiva(){
+        System.out.println("Digite um número: ");
+        int numero = entrada.nextInt();
+
+        System.out.print("Pulando de quantos em quantos número p/ vez? ");
+        int decr = entrada.nextInt();
+
+        for(int i = numero; i >= 1; i-= decr){
+            System.out.println("Número: " + i);
+        }
     }
 }
