@@ -155,12 +155,12 @@ public static void main(String[] args){
     public static void divisãoPorZero(){
         // Tratamento de erro
         try {
-        System.out.print("Qual é o dividendo? ");
-        byte dividendo = entrada.nextByte();
-        System.out.print("Qual é o divisor? ");
-        byte divisor = entrada.nextByte();
-        // System.out.println("Resultado é: " + dividendo / divisor);
-        System.out.println("Resultado é: " + dividendo / divisor);
+            System.out.print("Qual é o dividendo? ");
+            byte dividendo = entrada.nextByte();
+            System.out.print("Qual é o divisor? ");
+            byte divisor = entrada.nextByte();
+            // System.out.println("Resultado é: " + dividendo / divisor);
+            System.out.println("Resultado é: " + dividendo / divisor);
         }
         catch(Exception e){
             System.out.println("Mensagem temporária em INGLÊS do erro - " + e.getMessage());
