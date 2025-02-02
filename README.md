@@ -1,6 +1,6 @@
-# Projeto de Programação em Java
+# Fundamentos em Java
 
-Este projeto utiliza a linguagem Java para realizar várias operações, como cálculos matemáticos, manipulação de arquivos CSV e tratamento de exceções. A seguir estão as tecnologias utilizadas e as funcionalidades do projeto.
+Este projeto utiliza a linguagem Java para realizar várias operações, como cálculos matemáticos, manipulação de arquivos CSV e tratamento de exceções.
 
 ## Tecnologias e Bibliotecas
 
